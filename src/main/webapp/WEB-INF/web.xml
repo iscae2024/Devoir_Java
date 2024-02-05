@@ -31,9 +31,7 @@
   
   <!--End Page Admin  -->
   
-  
-  
-    <!-- Page Gestion directeur (Ajouter , supprimer et modifier) -->
+<!-- Page Gestion directeur (Ajouter , supprimer et modifier) -->
    <servlet>
 		<servlet-name>gestionDirecteur</servlet-name>
 		<servlet-class>Servlet.devoir.GestionDirecteur</servlet-class>
@@ -43,8 +41,18 @@
 		<url-pattern>/GestionDirecteur</url-pattern>
 </servlet-mapping>
   
-  <!--End Page Admin  -->
-  
+ <!--End Page Gestion Directeur  -->
+ 
+<!-- Configuration Servlet Cours -->
+<servlet>
+		<servlet-name>GestionCours</servlet-name>
+		<servlet-class>Servlet.devoir.GestionCours</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>GestionCours</servlet-name>
+		<url-pattern>/AjouterCours/*</url-pattern>
+</servlet-mapping>
+<!-- End Configuration Servlet Cours  -->
   
  <!-- Configuration JERSEY -->
 	<servlet>
