@@ -44,7 +44,7 @@ public class AdminServices extends HttpServlet{
 				+ "          <a class=\"btn btn-primary\" href=\"Ajouterenseignant\">Ajouter Enseignant</a>\r\n"
 				+ "        </li>\r\n"
 				+ "        <li class=\"nav-item\">\r\n"
-				+ "          <a class=\"btn btn-primary\" href=\"AjouterCours\">Ajouter Cours</a>\r\n"
+				+ "          <a class=\"btn btn-primary\" href=\"GestionCours\">Ajouter Cours</a>\r\n"
 				+ "        </li>\r\n"
 				+ "      </ul>\r\n"
 				+ "  </div>\r\n"

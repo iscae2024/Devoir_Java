@@ -15,6 +15,10 @@ public class GestionCours extends HttpServlet {
 		{	
 			
 			rep.setContentType("text/html");
+			String matier;
+			String date;
+			String timeSlot;
+			String ens;
 			PrintWriter out = rep.getWriter();
 			out.println("<!DOCTYPE html>\r\n"
 					+ "<html>\r\n"
@@ -41,15 +45,35 @@ public class GestionCours extends HttpServlet {
 					+ "          <a class=\"btn btn-primary\" href=\"GestionDirecteur\">Ajouter Directeur</a>\r\n"
 					+ "        </li>\r\n"
 					+ "        <li class=\"nav-item mx-5\">\r\n"
-					+ "          <a class=\"btn btn-primary\" href=\"Ajouterenseignant\">Ajouter Enseignant</a>\r\n"
+					+ "          <a class=\"btn btn-primary\" href=\"GestionEnseignant\">Ajouter Enseignant</a>\r\n"
 					+ "        </li>\r\n"
 					+ "        <li class=\"nav-item\">\r\n"
-					+ "          <a class=\"btn btn-primary\" href=\"AjouterCours\">Ajouter Cours</a>\r\n"
+					+ "          <a class=\"btn btn-primary\" href=\"GestionCours\">Ajouter Cours</a>\r\n"
 					+ "        </li>\r\n"
 					+ "      </ul>\r\n"
 					+ "  </div>\r\n"
 					+ "</nav>\r\n");
-
+			if (req.getParameter("nom")!=null && req.getParameter("jour")!=null && req.getParameter("time")!=null  && req.getParameter("id")!=null) {
+				matier =  req.getParameter("nom");
+				timeSlot = req.getParameter("time");
+				date = req.getParameter("jour");
+				ens = req.getParameter("ens");
+					out.println("<form action=Dashboard/CoursAPI/id method=post>\r\n"
+							+ "  <div class=\"form-group\">\r\n"
+							+ "    <label>Nom Matier </label>\r\n"
+							+ "    <input type=\"text\" class=\"form-control w-25\" name=CoursName value="+matier+">\r\n"
+							+ "    <label> Creneau </label>\r\n"
+							+ "    <input type=\"text\" class=\"form-control w-25\" name=timeslot value="+timeSlot+">\r\n"
+							+ "    <label> Jour </label>\r\n"
+							+ "    <input type=\"text\" class=\"form-control w-25\" name=date value="+date+">\r\n"
+							+ " <input type=hidden value="+ req.getParameter("id")+" name=id>\r\n"
+							+ "  </div>\r\n"
+							+ "  <button type=\"submit\" class=\"btn btn-primary\">Enregistrer</button>\r\n");
+				out.println("</form></body>\r\n"
+					+ "</html>");
+			}else {
+				
+			
 				out.println("<form action=Dashboard/CoursAPI method=post>\r\n"
 						+ "  <div class=\"form-group\">\r\n"
 						+ "    <label>Nom Matier </label>\r\n"
@@ -62,7 +86,7 @@ public class GestionCours extends HttpServlet {
 						+ "  <button type=\"submit\" class=\"btn btn-primary\">Enregistrer</button>\r\n");
 		out.println("</form></body>\r\n"
 				+ "</html>");
-		
+			}
 			out.close();	
 		}
 	

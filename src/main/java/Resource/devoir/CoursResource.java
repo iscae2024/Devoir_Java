@@ -21,4 +21,13 @@ public class CoursResource {
 		id++;
 	}
 	
+	@POST
+	@Path("/id")
+	@Consumes({"application/x-www-form-urlencoded"})
+	public void update(@FormParam("id") String ID ,@FormParam("CoursName") String name , @FormParam("timeslot") String timeslot, @FormParam("date") String day) {
+		
+		listCours.put(Integer.parseInt(ID), new Cours(name, timeslot,day,Integer.parseInt(ID))); 
+		
+	}
+	
 }

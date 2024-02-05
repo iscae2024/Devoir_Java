@@ -50,9 +50,25 @@
 </servlet>
 <servlet-mapping>
 		<servlet-name>GestionCours</servlet-name>
-		<url-pattern>/AjouterCours/*</url-pattern>
+		<url-pattern>/GestionCours/*</url-pattern>
 </servlet-mapping>
 <!-- End Configuration Servlet Cours  -->
+  
+  
+<!-- Configuration Servlet page directeur -->
+<servlet>
+		<servlet-name>PageDirecteur</servlet-name>
+		<servlet-class>Servlet.devoir.DirecteurServices</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>PageDirecteur</servlet-name>
+		<url-pattern>/DirecteurServices</url-pattern>
+</servlet-mapping>
+<!-- End Configuration Servlet Cours  --> 
+  
+  
+  
+  
   
  <!-- Configuration JERSEY -->
 	<servlet>
