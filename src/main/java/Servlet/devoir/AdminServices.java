@@ -50,6 +50,14 @@ public class AdminServices extends HttpServlet{
 				+ "  </div>\r\n"
 				+ "</nav>\r\n");
 
+		//Formule pour changer Password Admin: 
+		out.println("<form class=\" mt-5 form-control\" action=Dashboard/AdminResource method=post>\r\n"
+				+ "  <div class=\"form-group\">\r\n"
+				+ "    <label>Modifier le Mot de Passe </label>\r\n"
+				+ "    <input type=\"text\" class=\"form-control mb-2\"  name=\"Newpassword\" placeholder=\"Mot de Pass\">\r\n"
+				+ "  </div>\r\n"
+				+ "  <button type=\"submit\" class=\"btn btn-primary\">Enregistrer</button>\r\n"
+				+ "</form>");
 
 		out.println("</div></body>\r\n"
 				+ "</html>");

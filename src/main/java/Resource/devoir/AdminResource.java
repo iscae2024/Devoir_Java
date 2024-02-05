@@ -3,6 +3,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 import CLS.devoir.Admin;
+import jakarta.ws.rs.Consumes;
+import jakarta.ws.rs.FormParam;
+import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 @Path("/AdminResource")
 public class AdminResource {
@@ -12,5 +15,11 @@ public class AdminResource {
 	static {
 		admin.put(1, new Admin("Admin", "Admin"));
 	}
-
+	@POST
+	@Consumes({"application/x-www-form-urlencoded"})
+	public void changeInfoAdmin(@FormParam("Newpassword") String pass) {
+		admin.clear();
+		admin.put(1, new Admin("Admin", pass)); 
+	}
+	
 }

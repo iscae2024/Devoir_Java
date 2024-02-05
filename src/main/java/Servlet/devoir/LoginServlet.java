@@ -12,10 +12,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 public class LoginServlet extends HttpServlet {
 
-	
-	
-	
-
 	public void service (HttpServletRequest req,HttpServletResponse rep) 
 			throws ServerException , IOException, ServletException
 	{	
