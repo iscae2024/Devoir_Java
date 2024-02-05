@@ -28,4 +28,22 @@ public class DirecteurResource {
 		id++;
 	}
 	
+	@POST
+	@Path("/id")
+	@Consumes({"application/x-www-form-urlencoded"})
+	public void update(@FormParam("id") String ID ,@FormParam("DirecteurName") String name , @FormParam("passwordDir") String pass) {
+		
+		directeur.put(Integer.parseInt(ID), new Directeur(name, pass,Integer.parseInt(ID))); 
+		
+	}
+	
+	@POST
+	@Path("/delete")
+	@Consumes({"application/x-www-form-urlencoded"})
+	public void delete(@FormParam("delete") String ID) {
+		
+		directeur.remove(Integer.parseInt(ID));
+		
+	}
+	
 }

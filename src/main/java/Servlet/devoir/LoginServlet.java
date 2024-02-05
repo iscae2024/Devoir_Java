@@ -19,10 +19,17 @@ public class LoginServlet extends HttpServlet {
 		rep.setContentType("text/html");
 		PrintWriter out = rep.getWriter();
 		if (req.getParameter("userPost").equals("Admin")){
-		RequestDispatcher rd = req.getRequestDispatcher("/AdminServices");  
-		rd.include(req, rep);
-		}
-		
+			RequestDispatcher rd = req.getRequestDispatcher("/AdminServices");  
+			rd.include(req, rep);
+			}
+			if(req.getParameter("userPost").equals("Directeur")) {
+				RequestDispatcher rd = req.getRequestDispatcher("/DirecteurServices");  
+				rd.include(req, rep);
+			}
+			if (req.getParameter("userPost").equals("ES")) {
+				RequestDispatcher rd = req.getRequestDispatcher("/EnseignantServices");  
+				rd.include(req, rep);
+			}
 	}
 	
 }
