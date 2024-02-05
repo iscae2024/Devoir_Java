@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>Devoir2024</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+ <servlet>
+		<servlet-name>RouteLogin</servlet-name>
+		<servlet-class>Servlet.devoir.LoginServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>RouteLogin</servlet-name>
+		<url-pattern>/login</url-pattern>
+</servlet-mapping>
+  
+  <!-- Page Admin  -->
+   <servlet>
+		<servlet-name>PageAdmin</servlet-name>
+		<servlet-class>Servlet.devoir.AdminServices</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>PageAdmin</servlet-name>
+		<url-pattern>/AdminServices</url-pattern>
+</servlet-mapping>
+  
+  <!--End Page Admin  -->
+  
+  
+  
+  
+  
+  
+ <!-- Configuration JERSEY -->
+	<servlet>
+		<servlet-name>jersey-servlet</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>jersey.config.server.provider.packages</param-name>
+			<param-value>Resource.devoir</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>jersey-servlet</servlet-name>
+		<url-pattern>/Dashboard/*</url-pattern>
+	</servlet-mapping>
+<!--End Configuration JERSEY -->
+</web-app>
