@@ -33,7 +33,17 @@
   
   
   
+    <!-- Page Gestion directeur (Ajouter , supprimer et modifier) -->
+   <servlet>
+		<servlet-name>gestionDirecteur</servlet-name>
+		<servlet-class>Servlet.devoir.GestionDirecteur</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>gestionDirecteur</servlet-name>
+		<url-pattern>/GestionDirecteur</url-pattern>
+</servlet-mapping>
   
+  <!--End Page Admin  -->
   
   
  <!-- Configuration JERSEY -->
